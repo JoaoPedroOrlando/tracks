@@ -19,6 +19,14 @@ const Map = ()=> {
         }
     }
 
+    const startWatching = async () => {
+        try {
+          await requestPermissionsAsync();
+        } catch (e) {
+          setErr(e);
+        }
+    };
+
     return(
         <MapView 
             style ={styles.map}
